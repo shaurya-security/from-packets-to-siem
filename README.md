@@ -1,6 +1,6 @@
 # learning-journal
 
-A record of six months learning cybersecurity and cloud from zero.
+A record of three months learning cybersecurity and cloud from zero.
 Not a showcase. Not a certificate collection. Just what I studied, what I built, what broke, and what I figured out.
 
 ---
