@@ -1,66 +1,236 @@
-# from-packets-to-siem
+<p align="center">
+  <img src="assets/banner.png" alt="Cloud Security Engineering Journal" width="100%">
+</p>
 
-A documented journey from Linux fundamentals to cloud detection engineering, built through experiments, labs, mistakes, and investigation workflows.
+<h1 align="center">Cloud Security Engineering Journal</h1>
 
-Not a showcase. Not a certificate collection. Just what I studied, what I built, what broke, and what I figured out.
+<p align="center">
+A structured, hands-on knowledge base documenting the progression from Linux fundamentals to cloud detection engineering through experiments, labs, scripting, AWS, and a self-hosted SIEM.
+</p>
 
----
+<p align="center">
 
-## The path
+![Linux](https://img.shields.io/badge/Linux-Fundamentals-1793D1?logo=linux)
+![Networking](https://img.shields.io/badge/Networking-TCP/IP-0A66C2)
+![Bash](https://img.shields.io/badge/Bash-Automation-121011?logo=gnubash)
+![Python](https://img.shields.io/badge/Python-Scripting-3776AB?logo=python)
+![AWS](https://img.shields.io/badge/AWS-Cloud-FF9900?logo=amazonaws)
+![Wazuh](https://img.shields.io/badge/Wazuh-SIEM-0055FF)
 
-| Phase | What it covered | Status |
-|-------|----------------|--------|
-| [Phase 1](./phase-1/) | Linux and networking — how to read a system | ✅ done |
-| [Phase 2](./phase-2/) | Security concepts — CIA triad, attacks, frameworks | ✅ done |
-| [Phase 3](./phase-3/) | Bash and Python scripting — writing tools that do things | ✅ done |
-| [Phase 4](./phase-4/) | Cloud fundamentals — building real AWS infrastructure | ✅ done |
-| [Phase 5](./phase-5/) | Cloud security — detecting attacks in the cloud | ✅ done |
-| [Phase 6](./phase-6/) | SOC and SIEM — deploying Wazuh, triaging live alerts | ✅ done |
-
-Phase 7 is hands-on projects. Those live in separate repos.
-
----
-
-## What's in each phase
-
-**Phase 1 — Linux and networking**
-Filesystem layout, permissions, processes, and basic networking from a terminal. The ARP/ICMP contradiction — gateway visible in `arp -a`, `ping` returning 100% loss — was the first real troubleshooting moment: absence of ping response doesn't mean the host is down. Layer 2 and Layer 3 are different things. That reasoning came back in Phase 5.
-
-**Phase 2 — Core security concepts**
-CIA triad, threat modeling, attack frameworks. Phase 1 gave me commands. Phase 2 gave them context — what an attacker is trying to do, and why the Linux primitives I'd learned are the terrain they move through.
-
-**Phase 3 — Scripting**
-Bash and Python. First time building tools instead of only using them. Scripts for log parsing, automation, and small utilities. The shift from running commands to writing programs that run commands.
-
-**Phase 4 — Cloud fundamentals**
-AWS infrastructure built entirely through the CLI — VPC, subnets, IGW, route tables, security groups, EC2. No console, no guided tutorial. This phase nearly made me quit: building infrastructure from scratch exposed how much of Phase 1-3 understanding was surface-level.
-
-**Phase 5 — Cloud security**
-Detection in the cloud. The attack surface changes — no physical perimeter, logs are the only visibility, and IAM misconfiguration is the most common entry point. Detection in AWS using CloudTrail, VPC Flow Logs, and IAM analysis. Learned that cloud investigations often rely on incomplete or ambiguous telemetry, where the absence of evidence is not evidence of absence.
-
-**Phase 6 — SOC and SIEM**
-Deployed Wazuh on a KVM lab. Connected agents, triaged a live alert end-to-end. First time going through a full investigation workflow rather than just reading about one.
+</p>
 
 ---
 
-## What's in each phase folder
+## Overview
 
-Every phase folder has the same three files:
+This repository is the engineering journal behind my cloud security portfolio.
 
-- `notes.md` — what I was supposed to learn, and what it actually meant once it clicked
-- `labs.md` — what I ran, what broke, what I fixed
-- `summary.md` — closing thoughts: what landed, what I'd do differently
+Rather than serving as a collection of certificates or tutorial notes, it documents the technical progression of building cloud security skills through structured experimentation, practical labs, scripting, cloud infrastructure, detection engineering, and incident investigation.
 
-Some phases also include scripts, configurations, and lab artifacts generated during the learning process.
+The objective is to understand not only **how** technologies work, but also **how they integrate** into modern cloud security workflows.
+
+Topics are explored through:
+
+- Hands-on laboratories
+- Technical notes
+- Small utilities and scripts
+- Troubleshooting sessions
+- Investigation playbooks
+- Lessons learned from failures
+
+Unlike my implementation repositories—which focus on completed projects—this repository preserves the engineering process that made those projects possible.
+
 ---
 
-## Environment
+# Learning Roadmap
 
-| Period | Setup |
-|--------|-------|
-| Phases 1–2 | WSL2 Ubuntu on Windows 11 |
-| Phase 3 | Linux Mint (after SSD failure and full rebuild) |
-| Phases 4–5 | Linux Mint + AWS free tier, ap-south-1 |
-| Phase 6 | KVM on Linux Mint — Wazuh 4.11.2, Fedora agent, Ubuntu server |
+```
+Linux & Networking
+        │
+        ▼
+Security Fundamentals
+        │
+        ▼
+Bash & Python Automation
+        │
+        ▼
+AWS Cloud Infrastructure
+        │
+        ▼
+Cloud Detection Engineering
+        │
+        ▼
+SIEM Investigation & Response
+```
 
-Main machine throughout: Dell Inspiron 3490.
+---
+
+# Highlights
+
+- ✅ Structured six-phase roadmap
+- ✅ Linux administration
+- ✅ Networking fundamentals
+- ✅ Core cybersecurity concepts
+- ✅ Bash scripting
+- ✅ Python automation
+- ✅ AWS CLI
+- ✅ Cloud infrastructure
+- ✅ Detection engineering
+- ✅ Wazuh SIEM
+- ✅ MITRE ATT&CK mapping
+- ✅ Investigation playbooks
+- ✅ Lessons learned & troubleshooting
+
+---
+
+# Repository Structure
+
+```text
+.
+├── assets/
+│   └── banner.png
+│
+├── 01-linux-networking
+│   ├── labs.md
+│   ├── notes.md
+│   └── summary.md
+│
+├── 02-security-fundamentals
+│   ├── labs.md
+│   ├── notes.md
+│   └── summary.md
+│
+├── 03-scripting-automation
+│   ├── hero.sh
+│   ├── log_check.sh
+│   ├── log_parser.py
+│   ├── labs.md
+│   ├── notes.md
+│   └── summary.md
+│
+├── 04-cloud-foundations
+│   ├── inventory.sh
+│   ├── labs.md
+│   ├── notes.md
+│   └── summary.md
+│
+├── 05-detection-engineering
+│   ├── labs.md
+│   ├── notes.md
+│   └── summary.md
+│
+└── 06-siem-investigations
+    ├── ssh-brute-force-playbook.md
+    ├── labs.md
+    ├── notes.md
+    └── summary.md
+```
+
+---
+
+# Phase Breakdown
+
+| Phase | Focus |
+|---------|------|
+| **01** | Linux command line, filesystem, users, permissions, package management, networking |
+| **02** | Core cybersecurity concepts, authentication, encryption, access control, common attacks |
+| **03** | Bash automation, Python utilities, log parsing, reusable scripting |
+| **04** | AWS fundamentals, IAM, EC2, VPC, AWS CLI automation |
+| **05** | Detection engineering, log analysis, cloud telemetry, detection logic |
+| **06** | SIEM investigations, Wazuh, MITRE ATT&CK mapping, incident response workflows |
+
+---
+
+# Engineering Methodology
+
+Every phase follows the same documentation pattern.
+
+| File | Purpose |
+|------|---------|
+| **notes.md** | Concepts, observations, troubleshooting, and technical references |
+| **labs.md** | Practical exercises, experiments, and validation steps |
+| **summary.md** | Key takeaways, mistakes, and lessons learned |
+
+As the roadmap progresses, phases also introduce supporting scripts and investigation playbooks.
+
+---
+
+# Technologies
+
+### Operating Systems
+
+- Linux
+- Fedora
+- Ubuntu Server
+
+### Networking
+
+- TCP/IP
+- DNS
+- SSH
+- Routing
+- Firewalls
+
+### Programming & Automation
+
+- Bash
+- Python
+- AWS CLI
+
+### Cloud
+
+- AWS
+- IAM
+- EC2
+- VPC
+- Security Groups
+- CloudTrail
+
+### Detection Engineering
+
+- Wazuh
+- MITRE ATT&CK
+- Detection Rules
+- Log Analysis
+- Active Response
+- Incident Investigation
+
+---
+
+# Engineering Principles
+
+This journal intentionally documents more than successful outcomes.
+
+It captures:
+
+- experiments that succeeded
+- experiments that failed
+- debugging sessions
+- operational notes
+- design decisions
+- investigation methodology
+- implementation trade-offs
+
+The emphasis is on understanding systems rather than reproducing commands.
+
+---
+
+# Related Projects
+
+The knowledge documented here directly supports the implementation of the following repositories.
+
+| Repository | Description |
+|------------|-------------|
+| **aws-infra-cli** | AWS infrastructure provisioning using Bash and AWS CLI |
+| **aws-secure-vpc-with-terraform** | Production-style AWS networking with Terraform |
+| **aws-cloud-detection-pipeline** | Cloud detection engineering using CloudTrail, VPC Flow Logs, and Wazuh |
+| **wazuh-custom-rule-detection** | Custom detection rules mapped to MITRE ATT&CK |
+| **wazuh-active-response-containment** | Detection → Alert → Containment → Recovery workflow |
+
+---
+
+# Why This Repository Exists
+
+Engineering knowledge compounds through experimentation, documentation, and iteration.
+
+This repository preserves that process—capturing the progression from foundational Linux concepts to cloud detection engineering, one experiment, one investigation, and one project at a time.
